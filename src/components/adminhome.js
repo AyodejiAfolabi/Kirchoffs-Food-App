@@ -89,12 +89,8 @@ else{
 
 
      const upload = ()=>{
-        let url='http://localhost:4000/food/upload'
-        // let totalfood=foods
+        let url=`${url}food/upload`
        let foodObj={foodName,quantity,price,filename:myfile}
-       console.log(foodObj)
-       console.log({myfile})
-
         axios.post(url,foodObj).then((res)=>{
 if(res.data.status){
 setFoods(res.data.foodtray)
@@ -141,7 +137,7 @@ function remove(index){
   localStorage.allFoods=JSON.stringify(allFoods)
   setFoods(JSON.parse(localStorage.allFoods))
 
-  let url='http://localhost:4000/food/removeOne'
+  let url=`${url}food/removeOne`
 let obj={foodIndex}
   axios.post(url,obj).then( (res)=>{
 
@@ -158,7 +154,7 @@ localStorage.allFoods=JSON.stringify(res.data.foodtray)
 
 function savecChanges(){
   setSpinner({...spinner,spinnerClass:'ml-1 spinner-grow spinner-grow-sm',buttonText:'Loading'})
-let url='http://localhost:4000/food/savechange'
+let url=`${url}food/savechange`
 
 axios.post(url,foods).then( res=>{
 

@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function PendingRequest(props){
     let dispatch=useDispatch()
     const {newOrder}=props
     const [order,setOrder]=useState([])
+    const url= useSelector(state=>state.url)
 
     useEffect(()=>{
         setOrder(newOrder)
@@ -14,7 +15,7 @@ function PendingRequest(props){
 
     const approveTx=(txId,index)=>{
         console.log(txId)
-        let url=`http://localhost:4000/admin/approveTx`
+        let url=`${url}admin/approveTx`
         axios.post(url,{_id:txId}).then(res=>{
             if(res.data.status){
                 setOrder(order.splice(index,1))

@@ -9,7 +9,6 @@ function AdminSignin(){
 const dispatch=useDispatch()
     const [error,displayError]=useState( useSelector(state=>state.loginError))
 let url=useSelector(state=>state.url)
-// alert(url)
 
 const formik = useFormik({
     initialValues:{
@@ -22,10 +21,7 @@ axios.post(`${url}admin/signin`,values).then(res=>{
     
 if(res.data.status){
     localStorage.kirchoffAdminToken=res.data.token
-    // dispatch({type:adminLogin, payload:true})
     navigate('/admin')
-
-
 }
 else{
     console.log(res)

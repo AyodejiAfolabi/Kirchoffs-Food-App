@@ -12,6 +12,7 @@ function Navbar(){
 
 
   let cartItems=useSelector(state=>state.count)
+  const url= useSelector(state=>state.url)
 let dispatch= useDispatch()
   let navigate=useNavigate()
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,7 @@ const formik = useFormik({
   onSubmit:(values)=>{
 
     console.log(values)
-    let url='http://localhost:4000/admin/signup'
+    let url=`${url}admin/signup`
     axios.post(url,values).then(res=> {
       console.log(res)
     })

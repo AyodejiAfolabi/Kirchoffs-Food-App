@@ -8,8 +8,9 @@ function Requests(){
     const [oldOrder,setOldOrders]=useState([])
     const [newOrder,setNewOrder]=useState([])
     const approveTx=useSelector(state=>state.approveTx)
+    const url=useSelector(state=>state.url)
     useEffect(()=>{
-        let url=`http://localhost:4000/admin/allTrans`
+        let url=`${url}admin/allTrans`
         axios.get(url).then(res=>filterArr(res.data.transactions)).catch(err=>console.log(err))    
     },[approveTx])
 

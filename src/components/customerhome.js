@@ -9,15 +9,13 @@ function Customer(){
     const [foodArr,setFoodArr]=useState([])
     const [filterText,setFilterText]=useState('')
     const [displayCart,setDisplay]=useState(false)
-
+    const url= useSelector(state=>state.url)
     if(localStorage.checkedOut){
         localStorage.checkedOut=false
-        console.log(10)
-        // window.location.reload()
     }
 
     useEffect( ()=>{
-        let url='http://localhost:4000/food/getfoods'
+        let url=`${url}food/getfoods`
         axios.get(url).then( res=>{
 if(res.data.status){
 localStorage.allFoods=JSON.stringify(res.data.foodtray)

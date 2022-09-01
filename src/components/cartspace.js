@@ -67,7 +67,7 @@ dispatch({type:'emptycartItems',payload:[]})
 
 formik.values.items=foods
 formik.values.totalCost=totalCost
-let url='http://localhost:4000/food/saveTransaction'
+let url=`${url}food/saveTransaction`
 axios.post(url,formik.values).then(res=> {
   alert(`payment succesful \r\n \r\n CartID: ${res.data.cartId} `)  
 localStorage.myKirchoffCart=JSON.stringify({items:[],lastCartId:res.data.cartId})
