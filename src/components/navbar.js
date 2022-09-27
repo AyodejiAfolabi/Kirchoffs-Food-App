@@ -12,6 +12,7 @@ function Navbar(){
 
 
   let cartItems=useSelector(state=>state.count)
+  let companyName=useSelector(state=>state.companyName)
   const url= useSelector(state=>state.url)
 let dispatch= useDispatch()
   let navigate=useNavigate()
@@ -50,10 +51,7 @@ const formik = useFormik({
  confirm_password:''
   },
   onSubmit:(values)=>{
-
-    console.log(values)
-    let url=`${url}admin/signup`
-    axios.post(url,values).then(res=> {
+    axios.post(`${url}admin/signup`,values).then(res=> {
       console.log(res)
     })
     .catch(
@@ -95,14 +93,14 @@ navigate('/adminsignin')
 return(
   <>
         <nav class="navbar navbar2 fixed-bottom m-auto text-center">
-        <button disabled={cartItems<1} onClick={routeToCart} className='btn w-50  btn-success btn-cart m-auto'>Cart<i className="fa mx-2" >&#xf07a;</i>
+        <button disabled={cartItems<1} onClick={routeToCart} className='btn w-50  btn-warning btn-cart m-auto'>Cart<i className="fa mx-2" >&#xf07a;</i>
 <span className='badge badge-warning' id='lblCartCount'> {cartItems} </span></button>
 
 </nav>
 
 <nav className="navbar navbar-expand-lg navbar-dark fixed-top  bg-dark">
   <div className="container-fluid">
-    <a className="navbar-brand my-auto" href="#">KIRCHOFFS KITCHEN</a>
+    <a className="navbar-brand my-auto" href="#">{companyName}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

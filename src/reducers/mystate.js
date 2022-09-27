@@ -3,10 +3,11 @@
 
 const initstate={
     loginError:'',
-    url:'http://localhost:4000/',
+    url:'https://kirchoffs-foods.herokuapp.com/',
     kirchoffAdminToken: localStorage.kirchoffAdminToken,
     adminLogin:false,
-    approveTx:'' 
+    approveTx:'',
+    companyName:'KIRCHOFFS KITCHEN' 
 }
 
 const reducer=(state=initstate,action)=>{

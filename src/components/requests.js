@@ -10,8 +10,7 @@ function Requests(){
     const approveTx=useSelector(state=>state.approveTx)
     const url=useSelector(state=>state.url)
     useEffect(()=>{
-        let url=`${url}admin/allTrans`
-        axios.get(url).then(res=>filterArr(res.data.transactions)).catch(err=>console.log(err))    
+        axios.get(`${url}admin/allTrans`).then(res=>filterArr(res.data.transactions)).catch(err=>console.log(err))    
     },[approveTx])
 
     const filterArr=(arr)=>{
@@ -31,23 +30,24 @@ function Requests(){
 
     return(
         <>
-        <section className="container-fluid my-5">
+        <section className="my-4">            
+        <hr/>
     <div className="row  py-5">
-    <div className='w-100 container  bg-white' style={{height:'',paddingTop:'70px',fontFamily: 'Lobster, cursive'}}>
+    <div className='w-100  bg-dark' style={{height:'',paddingTop:'70px',fontFamily: 'Lobster, cursive'}}>
     <ul className="nav nav-pills d-flex justify-content-around" role="tablist">
             <li className="nav-item">
             <a className="nav-link active h4" data-toggle="pill" href="#home">Pending Orders</a>
             </li>
             <li className="nav-item">
-            <a className="nav-link h4" data-toggle="pill" href="#menu1">History</a>
+            <a className="nav-link h4 " data-toggle="pill" href="#menu1">History</a>
             </li>                
         </ul>
         {oldOrder.length==0&&newOrder.length==0?<div className=' mt-5 text-center mx-auto'><span className='text-dark'>No record is found</span></div>:<div className="tab-content">
             <div id="home" className="w-100 tab-pane active">
-            {newOrder.length==0? <div className=' mt-5 text-center mx-auto'><span className='text-dark'>No record is found</span></div>: <PendingRequest newOrder={newOrder}/>      }                  
+            {newOrder.length==0? <div className=' mt-5 text-center mx-auto'><span className='text-white'>No record is found</span></div>: <PendingRequest newOrder={newOrder}/>      }                  
             </div>
             <div id="menu1" className="tab-pane fade">
-                {oldOrder.length==0? <div className=' mt-5 text-center mx-auto'><span className='text-dark'>No record is found</span></div>:  <RequestHistory oldOrder={oldOrder}/>}
+                {oldOrder.length==0? <div className=' mt-5 text-center mx-auto text-white'><span className='text-white'>No record is found</span></div>:  <RequestHistory oldOrder={oldOrder}/>}
             </div>
         </div>}  
 </div>

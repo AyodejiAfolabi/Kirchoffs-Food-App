@@ -17,11 +17,9 @@ const [foodName,setFood]=useState()
    const [editName,setEditName]=useState('')
    const [editPrice,setEditPrice]=useState('')
    const [editQuantity,setEditQauntity]=useState('')
-   const [edit_id,setEditId]=useState('')
+const [btn,setBtn]=useState({btnText:'Add To Dish', class:''})
+const [edit_id,setEditId]=useState('')
 
-    window.onbeforeunload = function(event) {
-      // localStorage.removeItem('kirchoffAdminToken')
-  };
     
     useEffect( ()=>{
   dispatch({type:'loginError', payload:''})
@@ -32,7 +30,6 @@ if(!localStorage.kirchoffAdminToken){
 }
 else{
 let token=localStorage.kirchoffAdminToken
-
 axios.get(`${url}admin/authenticate`, {headers:{
   'authorization' :  `Bearer ${token}`,
   'Content-Type':'application/json',
@@ -56,9 +53,7 @@ navigate('/adminsignin')
 
 }
       
-        let posturl=`${url}food/getfoods`
-        axios.get(posturl).then( res=>{
-
+        axios.get(`${url}food/getfoods`).then( res=>{
 if(res.data.status){
     let foodtray=res.data.foodtray
     setFoods(foodtray)
@@ -89,10 +84,11 @@ else{
 
 
      const upload = ()=>{
-        let url=`${url}food/upload`
+      setBtn({btnText:'', class:'spinner-border spinner-border-sm text-white mx-2'})
        let foodObj={foodName,quantity,price,filename:myfile}
-        axios.post(url,foodObj).then((res)=>{
+        axios.post(`${url}food/upload`,foodObj).then((res)=>{
 if(res.data.status){
+  setBtn({btnText:'Add To Dish', class:''})
 setFoods(res.data.foodtray)
 setFood('')
 setPrice('')
@@ -101,7 +97,9 @@ localStorage.allFoods=JSON.stringify(res.data.foodtray)
 alert('operation succesful')
 } 
 
-        }).catch( err=>console.log(err))
+        }).catch( err=>{console.log(err)
+          setBtn(({btnText:'Add To Dish', class:''}))
+        })
 
     }
 
@@ -136,10 +134,8 @@ function remove(index){
 
   localStorage.allFoods=JSON.stringify(allFoods)
   setFoods(JSON.parse(localStorage.allFoods))
-
-  let url=`${url}food/removeOne`
 let obj={foodIndex}
-  axios.post(url,obj).then( (res)=>{
+  axios.post(`${url}food/removeOne`,obj).then( (res)=>{
 
     if(res.data.status){
 alert('delete succesful')
@@ -154,9 +150,7 @@ localStorage.allFoods=JSON.stringify(res.data.foodtray)
 
 function savecChanges(){
   setSpinner({...spinner,spinnerClass:'ml-1 spinner-grow spinner-grow-sm',buttonText:'Loading'})
-let url=`${url}food/savechange`
-
-axios.post(url,foods).then( res=>{
+axios.post(`${url}food/savechange`,foods).then( res=>{
 
     if(res.data.status){
         alert('operation succesful')
@@ -193,23 +187,24 @@ function saveEdited(){
 return(
 
     <>
-    <section className="container-fluid my-5">
+    <section className="container-fluid my-4">      
+    <hr/>
 <div className="row  py-5">
 
-<div className="col bg bg-white py-2">
+<div className="col bg bg-dark text-white py-5">
    <div className='col-md-6'>
   <input placeholder="Add a dish you wish to offer" value={foodName} onChange={(e)=>setFood(e.target.value)} className="form-control"/> 
   <input placeholder="price" value={price} className="input d-block my-2  px-2" type='number' onChange={(e)=>setPrice(e.target.value)} />
   <input type='number' value={quantity} placeholder="quantity" className="d-block my-2  px-2" onChange={(e)=>setQuanity(e.target.value)}/>
-  <input type='file' className="d-block my-2" onChange={(e)=>pickFile(e)}/>  <button onClick={upload} className="btn btn-warning my-2">Add To Dish</button>
+  <input type='file' className="d-block my-2" onChange={(e)=>pickFile(e)}/>  <button onClick={upload} className="btn btn-warning my-2"> {btn.btnText} <i className={btn.class}></i></button>
   </div>
 <div className="my-4">
 <p className="h2 his">List of Dishes you offer</p>
 
 <div>
-{foods[0]==undefined? <div className="bg-white py-5"> <i className="spinner-border ml-5"></i> <h6 className="ml-5 my-5">Loading .... 
+{foods[0]==undefined? <div className="bg-dark text-white py-5"> <i className="spinner-border ml-5"></i> <h6 className="ml-5 my-5">Loading .... 
     or <a onClick={()=>window.location.reload()} className="text-primary" style={{cursor:"pointer"}}>refresh the page</a> </h6> </div>: 
-  <table className="table table-bordered">
+  <table className="table table-bordered text-white">
     <thead>
 <tr>
   <td>S/N</td>

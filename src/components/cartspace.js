@@ -13,6 +13,7 @@ const [foods,setFoods]=  useState(useSelector(state=>state.cartItems))
 console.log(foods)
 const [email,setEmail]=useState('')
 let dispatch=useDispatch()
+const url = useSelector(state=>state.url)
 let cartItem= useSelector(state=>state.count)
 let navigate=useNavigate()
 useEffect( ()=>{
@@ -67,8 +68,7 @@ dispatch({type:'emptycartItems',payload:[]})
 
 formik.values.items=foods
 formik.values.totalCost=totalCost
-let url=`${url}food/saveTransaction`
-axios.post(url,formik.values).then(res=> {
+axios.post(`${url}food/saveTransaction`,formik.values).then(res=> {
   alert(`payment succesful \r\n \r\n CartID: ${res.data.cartId} `)  
 localStorage.myKirchoffCart=JSON.stringify({items:[],lastCartId:res.data.cartId})
   console.log(res)
@@ -163,7 +163,7 @@ return(
 
     <h3 className="his text-white">Your Orders</h3>
     <div>
-        <table className="table table-bordered bg bg-white">
+        <table className="table table-bordered bg bg-dark text-white">
     <thead>
 <tr>
   <th>S/N</th>

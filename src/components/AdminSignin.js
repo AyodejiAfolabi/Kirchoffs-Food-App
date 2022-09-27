@@ -9,6 +9,7 @@ function AdminSignin(){
 const dispatch=useDispatch()
     const [error,displayError]=useState( useSelector(state=>state.loginError))
 let url=useSelector(state=>state.url)
+const [btn,setBtn]=useState({btnText:'SUBMIT', class:''})
 
 const formik = useFormik({
     initialValues:{
@@ -16,14 +17,16 @@ const formik = useFormik({
 password:''
     },
     onSubmit:(values)=>{
-
+        setBtn({btnText:'', class:'spinner-border spinner-border-sm text-white mx-2'})
 axios.post(`${url}admin/signin`,values).then(res=>{
     
 if(res.data.status){
+    setBtn({btnText:'SUBMIT', class:''})
     localStorage.kirchoffAdminToken=res.data.token
     navigate('/admin')
 }
 else{
+    setBtn({btnText:'SUBMIT', class:''})
     console.log(res)
     displayError(res.data.message)
 }
@@ -68,7 +71,7 @@ return(
 
 </form>
 
-<button  disabled={!formik.isValid || !formik.dirty} onClick={()=>formik.handleSubmit()} className='my-3 w-100 btn btn-warning'>SUBMIT</button>
+<button  disabled={!formik.isValid || !formik.dirty} onClick={()=>formik.handleSubmit()} className='my-3 w-100 btn btn-warning'>{btn.btnText}<i className={btn.class}></i></button>
 
 
 </div>

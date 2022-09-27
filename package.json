@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.2",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.1",
     "cra-template": "1.1.0",
