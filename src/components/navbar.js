@@ -108,6 +108,7 @@ return(
       <ul className="navbar-nav m-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <a onClick={routeToHome} className="nav-link active" aria-current="page" href="#">Home</a>
+          
         </li>
         <li className="nav-item">
           <a className="nav-link active" onClick={routeToOrder} href="#">Order</a>
@@ -118,12 +119,12 @@ return(
       
       </ul>
       <div class="d-flex">
-      <button disabled={cartItems<1} onClick={routeToCart} className='btn btn-warning btn-cart my-1'>Cart<i className="fa mx-2" >&#xf07a;</i>
+      <button onClick={routeToCart} className='btn btn-warning btn-cart my-1'>Cart<i className="fa mx-2" >&#xf07a;</i>
 <span className='badge badge-warning' id='lblCartCount'> {cartItems} </span></button>
       { localStorage.kirchoffAdminToken && <div class="dropdown">
     <button class="dropbtn"> 
     
-    <span class="mx-3"><img src={require('../assets/admin.jpg').default} alt="Avatar" class="avatar"/></span>
+    <span class="mx-3 my-1"><img src={require('../assets/admin.jpg').default} alt="Avatar" class="avatar"/></span>
 
 
     </button>

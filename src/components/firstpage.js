@@ -7,11 +7,11 @@ function FirstPage(){
   }
     return(
         <>
-       <section className='firstpage container  py-5 my-5'>
+       <section className='firstpage container'>
     
     <div className="m-auto  intro-word text-center"> <p className="h1 text-white ">WELCOME TO THE KIRCHOFFS KITCHEN </p> </div>
     
-    <div className="row py-5">
+    <div className="row my-5">
     
         <div className="col-lg-4 my-2">
             <div className="card border-0 bg-dark text-white mb-2  m-auto text-center py-3">

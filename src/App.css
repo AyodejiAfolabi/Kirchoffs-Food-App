@@ -36,11 +36,7 @@
     transform: rotate(360deg);
   }
 }
-.firstpage{
-  height: 80vh;
-  width: 100%;
-  
-}
+
 .intro-word{
 font-weight: bold;
   font-family: 'Lobster', cursive;
@@ -125,8 +121,10 @@ background-color: red;
 }
 .search3{
   /* width: 100%; */
-  padding: 0.375rem 0.75rem;
+  height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
   font-size: 1rem;
+  margin-top: -7px;
   font-weight: 400;
   line-height: 1;
   color:white;

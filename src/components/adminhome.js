@@ -194,8 +194,8 @@ return(
 <div className="col bg bg-dark text-white py-5">
    <div className='col-md-6'>
   <input placeholder="Add a dish you wish to offer" value={foodName} onChange={(e)=>setFood(e.target.value)} className="form-control"/> 
-  <input placeholder="price" value={price} className="input d-block my-2  px-2" type='number' onChange={(e)=>setPrice(e.target.value)} />
-  <input type='number' value={quantity} placeholder="quantity" className="d-block my-2  px-2" onChange={(e)=>setQuanity(e.target.value)}/>
+  <input placeholder="price" value={price} className="input d-block my-2  px-2 bg-white" type='number' onChange={(e)=>setPrice(e.target.value)}/>
+  <input type='number' value={quantity} placeholder="quantity" className="d-block my-2  px-2 bg-white" onChange={(e)=>setQuanity(e.target.value)}/>
   <input type='file' className="d-block my-2" onChange={(e)=>pickFile(e)}/>  <button onClick={upload} className="btn btn-warning my-2"> {btn.btnText} <i className={btn.class}></i></button>
   </div>
   </div>
