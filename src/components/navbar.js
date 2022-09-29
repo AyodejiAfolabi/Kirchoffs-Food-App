@@ -100,7 +100,7 @@ return(
 
 <nav className="navbar navbar-expand-lg navbar-dark fixed-top  bg-dark">
   <div className="container-fluid">
-    <a className="navbar-brand my-auto" href="#">{companyName}</a>
+    <a className="navbar-brand my-auto" href="#" style={{fontSize:'20px'}}>{companyName}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -118,9 +118,8 @@ return(
       
       </ul>
       <div class="d-flex">
-
-
-
+      <button disabled={cartItems<1} onClick={routeToCart} className='btn btn-warning btn-cart my-1'>Cart<i className="fa mx-2" >&#xf07a;</i>
+<span className='badge badge-warning' id='lblCartCount'> {cartItems} </span></button>
       { localStorage.kirchoffAdminToken && <div class="dropdown">
     <button class="dropbtn"> 
     

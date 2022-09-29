@@ -13,7 +13,7 @@ function FirstPage(){
     
     <div className="row py-5">
     
-        <div className="col-lg-4">
+        <div className="col-lg-4 my-2">
             <div className="card border-0 bg-dark text-white mb-2  m-auto text-center py-3">
     <div className="card-body">
     <img  src={`https://res.cloudinary.com/dpfppw5ae/image/upload/w_400,h_280,c_scale/kirchoffs dinning`} className="img-fluid "/>
@@ -23,7 +23,7 @@ function FirstPage(){
     </div>
         </div>
        
-        <div className="col-lg-4" onClick={routeToOrder}>
+        <div className="col-lg-4 my-2" onClick={routeToOrder}>
             <div className="card border-0 bg-dark text-white mb-2  m-auto text-center py-3    ">
     <div className="card-body ">
     <img  src={`https://res.cloudinary.com/dpfppw5ae/image/upload/w_400,h_280,c_scale/order food now`} className="img-fluid "/>
@@ -38,7 +38,7 @@ function FirstPage(){
 
 
 
-        <div className="col-lg-4">
+        <div className="col-lg-4 my-2">
             <div className="card border-0 bg-dark mb-2 text-white m-auto text-center py-3    ">
     <div className="card-body ">
     <img  src={`https://res.cloudinary.com/dpfppw5ae/image/upload/w_400,h_280,c_scale/kitchen section`} className="img-fluid "/>

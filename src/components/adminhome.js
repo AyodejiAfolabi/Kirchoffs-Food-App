@@ -187,7 +187,7 @@ function saveEdited(){
 return(
 
     <>
-    <section className="container-fluid my-4">      
+    <section className="my-4">      
     <hr/>
 <div className="row  py-5">
 
@@ -198,13 +198,14 @@ return(
   <input type='number' value={quantity} placeholder="quantity" className="d-block my-2  px-2" onChange={(e)=>setQuanity(e.target.value)}/>
   <input type='file' className="d-block my-2" onChange={(e)=>pickFile(e)}/>  <button onClick={upload} className="btn btn-warning my-2"> {btn.btnText} <i className={btn.class}></i></button>
   </div>
-<div className="my-4">
+  </div>
+<div className="my-4 container-fluid">
 <p className="h2 his">List of Dishes you offer</p>
 
 <div>
 {foods[0]==undefined? <div className="bg-dark text-white py-5"> <i className="spinner-border ml-5"></i> <h6 className="ml-5 my-5">Loading .... 
     or <a onClick={()=>window.location.reload()} className="text-primary" style={{cursor:"pointer"}}>refresh the page</a> </h6> </div>: 
-  <table className="table table-bordered text-white">
+  <table className="table table-bordered bg-dark text-white w-100">
     <thead>
 <tr>
   <td>S/N</td>
@@ -248,7 +249,6 @@ return(
 </div>
 
 
-</div>
 
 <div className='modal fade big-modal ' id='editModal' data-backdrop="static">
                     <div className='modal-dialog modal-dialog-centered'>

@@ -184,7 +184,7 @@ return(
   <td>{food.quantity}</td>
   <td>{food.orderQuantity}</td>
   
-<td> <button onClick={()=>decrease(index)} className="add bg bg-warning mx-2"><i className="  fa fa-minus-circle"></i></button> <button onClick={()=>remove(index)}  className="btn btn-danger mx-2"><i className="fa fa-trash"></i></button> <button onClick={()=>increase(index)} className="add bg bg-success mx-2"><i className=" fa fa-plus-circle  outline-0"></i></button></td>
+<td> <button onClick={()=>decrease(index)} className="add bg bg-warning mx-2 my-1"><i className="  fa fa-minus-circle"></i></button> <button onClick={()=>remove(index)}  className="btn btn-danger mx-2 my-1"><i className="fa fa-trash"></i></button> <button onClick={()=>increase(index)} className="add bg bg-success mx-2 my-1"><i className=" fa fa-plus-circle  outline-0"></i></button></td>
   <td>#{food.price}</td>
 </tr>
 
@@ -204,12 +204,12 @@ return(
 <div className="col-md-6">
 {formik.touched.phone &&<div className='text-danger'>{formik.errors.phone}</div>}
 
-  <input className="form-control"  name="phone" placeholder="phone number"   onChange={formik.handleChange} value={formik.values.phone}  onBlur={formik.handleBlur}/>
+  <input className="form-control my-2"  name="phone" placeholder="phone number"   onChange={formik.handleChange} value={formik.values.phone}  onBlur={formik.handleBlur}/>
 </div>
 <div className="col-md-6">
 {formik.touched.name &&<div className='text-danger'>{formik.errors.name}</div>}
 
-  <input name="name" className="form-control"   placeholder="Full Name"   onChange={formik.handleChange} value={formik.values.name}  onBlur={formik.handleBlur}/>
+  <input name="name" className="form-control my-2"   placeholder="Full Name"   onChange={formik.handleChange} value={formik.values.name}  onBlur={formik.handleBlur}/>
 </div>
        </div>
        {formik.touched.email &&<div className='text-danger'>{formik.errors.email}</div>}
@@ -226,7 +226,7 @@ return(
 <textarea className="form-control my-2" name="description" placeholder="Add a description .....   (optional)" onChange={formik.handleChange} value={formik.values.description}  onBlur={formik.handleBlur}></textarea>
   <PaystackConsumer {...componentProps} >
           { ({initializePayment}) => 
-       <button type="submit"  disabled={!formik.isValid || !formik.dirty} className="btn btn-warning bstn text-white my-2" onClick={() => initializePayment(handleSuccess, handleClose)}>Check Out</button> }
+       <button style={{fontSize:'18px'}}  type="submit"  disabled={!formik.isValid || !formik.dirty} className="btn btn-warning bstn text-white my-2 w-100" onClick={() => initializePayment(handleSuccess, handleClose)}>Check Out</button> }
         </PaystackConsumer>
 </form>
 

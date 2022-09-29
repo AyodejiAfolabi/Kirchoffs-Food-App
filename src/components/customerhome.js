@@ -98,7 +98,7 @@ return(
 <div className="container my-5">
     
 <form onSubmit={(e)=>e.preventDefault()} className="example" style={{float:'right'}}>
-<input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2"/><button className="search3 bg-primary border-none"><i  className='fa fa-search'></i></button> 
+<input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2 bg-dark text-white"/><button className="search3 bg-dark border-none"><i  className='fa fa-search'></i></button> 
     </form>
 <div className='row mt-5' style={{clear:'both'}}>
     {foods[0]==undefined && foodArr[0]!==undefined ? <div className="bg-dark text-white py-5 mt-5"> <i className="fa fa-shopping-cart ml-5"></i> No result match for '{filterText}' <h6 className="ml-5 my-5"> </h6> </div>:
