@@ -98,10 +98,10 @@ border: 1px solid red;
     float: right;
     margin-top: 5px;
   }
-  .navbar2{
-    display: none;
-  }
-
+  /* .navbar2{
+    display:none;
+  } */
+/* 
   @media screen and (max-width: 991px) {
     .navbar2 {
       display: block;
@@ -110,7 +110,7 @@ border: 1px solid red;
       display: none;
       background-color: red;
     }
-}
+} */
 
 
 

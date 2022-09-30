@@ -119,8 +119,8 @@ return(
       
       </ul>
       <div class="d-flex">
-      <button onClick={routeToCart} className='btn btn-warning btn-cart my-1'>Cart<i className="fa mx-2" >&#xf07a;</i>
-<span className='badge badge-warning' id='lblCartCount'> {cartItems} </span></button>
+      {/* <button onClick={routeToCart} className='btn btn-warning btn-cart my-1'>Cart<i className="fa mx-2" >&#xf07a;</i>
+<span className='badge badge-warning' id='lblCartCount'> {cartItems} </span></button> */}
       { localStorage.kirchoffAdminToken && <div class="dropdown">
     <button class="dropbtn"> 
     
