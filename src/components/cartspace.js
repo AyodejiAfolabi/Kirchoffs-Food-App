@@ -163,7 +163,7 @@ return(
 
     <h3 className="his text-white">Your Orders</h3>
     <div>
-        <table className="table table-bordered bg bg-dark text-white">
+        <table className="table table-bordered bg bg-dark text-white table-responsive-sm">
     <thead>
 <tr>
   <th>S/N</th>

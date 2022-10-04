@@ -187,7 +187,7 @@ function saveEdited(){
 return(
 
     <>
-    <section className="my-4">      
+    <section className="my-4 container-fluid">      
     <hr/>
 <div className="row  py-5">
 
@@ -205,7 +205,7 @@ return(
 <div>
 {foods[0]==undefined? <div className="bg-dark text-white py-5"> <i className="spinner-border ml-5"></i> <h6 className="ml-5 my-5">Loading .... 
     or <a onClick={()=>window.location.reload()} className="text-primary" style={{cursor:"pointer"}}>refresh the page</a> </h6> </div>: 
-  <table className="table table-bordered bg-dark text-white w-100">
+  <table className="table table-bordered bg-dark text-white w-100 table-responsive-sm">
     <thead>
 <tr>
   <td>S/N</td>
