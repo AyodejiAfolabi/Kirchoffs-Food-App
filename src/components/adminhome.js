@@ -200,7 +200,7 @@ return(
   </div>
   </div>
 <div className="my-4 container-fluid">
-<p className="h2 his">List of Dishes you offer</p>
+<p className="h2 his text-white">List of Dishes you offer</p>
 
 <div>
 {foods[0]==undefined? <div className="bg-dark text-white py-5"> <i className="spinner-border ml-5"></i> <h6 className="ml-5 my-5">Loading .... 

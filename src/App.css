@@ -60,9 +60,22 @@ font-weight: bold;
   width: 100px;
   border-radius: 60px;
   color: white;
-  background-color: rgba(223, 15, 17);
+  background-color: #1ac9a0;
 }
 .bttn:hover{
+  background-color: crimson;
+  transition: 2ms;
+}
+.firstpage-btn{ 
+   outline: 0;
+  border: 0;
+  height: 50px;
+  width: 100px;
+  border-radius: 60px;
+  color: white;
+  background-color: #c91aaf;
+}
+.firstpage-btn:hover{
   background-color: crimson;
   transition: 2ms;
 }
@@ -110,8 +123,7 @@ background-color: red;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-radius: 0.75rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 }

@@ -83,7 +83,7 @@ function PendingRequest(props){
         <div className='w-100 container bg-dark text-white' >
             <div className='row'>
                 <form onSubmit={(e)=>e.preventDefault()} className="example my-3" style={{marginLeft:'auto'}}>
-                    <input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2"/><button className="search3 bg-primary border-none"><i  className='fa fa-search'></i></button> 
+                    <input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2"/>
                 </form>
                 <table className='table  table-bordered w-100 mt-3 text-white table-responsive-sm'>
                     <thead style={{height:'',marginTop:'90px', fontFamily: 'Lobster, cursive'}}>

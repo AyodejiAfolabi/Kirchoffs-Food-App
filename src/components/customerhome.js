@@ -94,18 +94,19 @@ const filterFoodArray=()=>{
 return(
 
     <>
-    <section className='py-5'>
+    <section className='py-5 bg-dark'>
 <div className="container my-5">
     
 <form onSubmit={(e)=>e.preventDefault()} className="example" style={{float:'right'}}>
-<input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2 bg-dark text-white"/><button className="search3 bg-dark border-none"><i  className='fa fa-search'></i></button> 
+<input type="text" onChange={(e)=>setFilterText(e.target.value)} placeholder="Search.." className="search2 bg-white text-dark mb-3"/>
+ 
     </form>
 <div className='row mt-5' style={{clear:'both'}}>
-    {foods[0]==undefined && foodArr[0]!==undefined ? <div className="bg-dark text-white py-5 mt-5"> <i className="fa fa-shopping-cart ml-5"></i> No result match for '{filterText}' <h6 className="ml-5 my-5"> </h6> </div>:
+    {foods[0]==undefined && foodArr[0]!==undefined ? <div className="bg-white text-dark py-5 mt-5"> <i className="fa fa-shopping-cart ml-5"></i> No result match for '{filterText}' <h6 className="ml-5 my-5"> </h6> </div>:
 foods.map( (food,index)=>(
 
 <div key={index} className="col-md-4 my-2">
-<div className="card border-0 bg-dark mb-2  m-auto text-center text-white py-3">
+<div className="card border-0  mb-2  m-auto text-center text-white py-3" style={{backgroundColor:'#c91aaf'}}>
 <div className="card-body ">
 <img  src={food.filename} className="img-fluid w-100"/>
 </div>

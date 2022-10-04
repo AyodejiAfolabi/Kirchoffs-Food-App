@@ -54,8 +54,8 @@ return(
     <>
     
     <section className='container my-5'>
-<div className='row my-5 py-5 '>
-<div className='col-6 m-auto bg bg-white '>
+<div className='row my-5 py-5'>
+<div className='col-6 m-auto bg bg-white' style={{borderRadius:'5px'}}>
 <p className="text-center h3 py-5 intro-word">LOGIN AS ADMIN</p>
 
 <form onSubmit={formik.handleSubmit}>
