@@ -7,10 +7,10 @@ function FirstPage(){
   }
     return(
         <>
-       <section className='bg-dark py-5'>
+       <section className='bg-dark py-5 container-fluid'>
     
     
-    <div className="container-fluid row py-5">
+    <div className=" row py-5">
     
         <div className="col-sm-4 py-2">
             <div className="card border-0  text-white mb-2  m-auto text-center py-3" style={{backgroundColor:'#c2b615'}}>
